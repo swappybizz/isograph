@@ -1,0 +1,7 @@
+gtts
+streamlit
+openai
+numpy
+PyMuPDF  # This version number is an example; use the version that suits your compatibility needs.
+python-docx
+openpyxl
