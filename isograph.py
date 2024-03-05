@@ -220,7 +220,7 @@ if user_input:
         
         # play the audio as the response is generated
         audio_buffer = text_to_speech(response)
-        st.audio(audio_buffer, format="audio/wav",sample_rate=44100)
+        st.audio(audio_buffer, format="audio/wav")
 
         
 # Sidebar for chat history management
