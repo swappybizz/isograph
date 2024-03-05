@@ -200,7 +200,7 @@ if user_input:
 
     st.session_state.messages.append({"role": "user", "content": user_input})
 
-    with st.status("Processing...", expanded=True):
+    with st.status(".", expanded=True):
         chat_history_str = " ".join([message["content"] for message in st.session_state.messages])
         # Assume get_response is a function you define elsewhere to generate the assistant's response
         # if there is a document uploaded get its content
@@ -233,15 +233,16 @@ with st.sidebar:
              """)
     # Chat History Management
     "---"  
-    st.write("*Chat History Management*")
+    st.write("Chat History Management")
 
     if 'messages' in st.session_state:
+        
         chat_history_json = json.dumps(st.session_state.messages, indent=2)
         # Convert it to string
         chat_history_str = " \n".join([message["content"] for message in st.session_state.messages])
-        
+        st.warning( "Remember to download the chat history, You will need it to start your ISOENSURE")
         st.download_button(
-            label="Download Chat History",
+            label="Download CHAT HISTORY as OUPUT JSON",
             data=chat_history_json,
             file_name="chat_history.json",
             mime="application/json"
