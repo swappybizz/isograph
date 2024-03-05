@@ -10,7 +10,7 @@ from docx import Document
 import openpyxl
 
 # openai_api_key = os.getenv("OPENAI_API_KEY")
-st.secrets["openai_api_key"] = os.getenv("OPENAI_API_KEY")
+# st.secrets["openai_api_key"] = os.getenv("OPENAI_API_KEY")
 def get_doc_content(uploaded_file):
     # Determine file type and process accordingly
     if uploaded_file.name.endswith('.pdf'):
