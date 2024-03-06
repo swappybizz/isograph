@@ -250,12 +250,9 @@ with st.sidebar:
             mime="application/json"
         )
         "---"
-        if st.button("Clear Chat History"):
-            st.session_state.messages = []
-            st.experimental_rerun()
+
     
-    # File upload and management
-    "---"
+
 
 
 
@@ -314,3 +311,8 @@ with st.sidebar:
         
         # Add the uploaded file to the session state list
         st.session_state.uploaded_files.append(uploaded_file)
+
+
+    if st.button("Clear Chat History"):
+        st.session_state.messages = []
+            st.experimental_rerun()
