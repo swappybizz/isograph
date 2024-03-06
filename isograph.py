@@ -134,7 +134,7 @@ def get_chat_prompt(user_input:str, chat_history:str, doc_content:str):
     ***
     Respond as an interviewer who is direct and to the point, but also friendly and understanding.
     IF Previous question has been answered off-context, or partially or generally.
-    Use markdown to highlight the Import tant parts of your output. 
+    Use markdown to highlight the important parts of your output. 
     
     
     
