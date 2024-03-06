@@ -240,7 +240,7 @@ with st.sidebar:
         chat_history_json = json.dumps(st.session_state.messages, indent=2)
         # Convert it to string
         chat_history_str = " \n".join([message["content"] for message in st.session_state.messages])
-        st.warning( "Remember to download the chat history, You will need it to start your ISOENSURE")
+        st.warning( "Remember to download the chat history once done, You will need it to start your ISOENSURE")
         st.download_button(
             label="Download CHAT HISTORY as OUPUT JSON",
             data=chat_history_json,
