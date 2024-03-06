@@ -88,6 +88,7 @@ def get_chat_prompt(user_input:str, chat_history:str, doc_content:str):
     Associate relevant context to make your question more specific by including specifics mentioned by the user, like names, structural data, heirachies, and roles.
     You may also combine or simplify the questions to compensate for incomplete or too long information.
     If A previously asked question is partially answered, include the unanswered part in the next question. Explain how its important for the interview process.
+    Add a small senetance explaining the progress (approx %) of the interview process.
     Here is the questionaire:
     ###
     Preliminary Data Gathering:
@@ -102,29 +103,29 @@ def get_chat_prompt(user_input:str, chat_history:str, doc_content:str):
     
     Main Questions:
 
-    Has the company evaluated the relevance of ISO certification for all its operational areas to determine if specific areas should not pursue certification?
+    9. Has the company evaluated the relevance of ISO certification for all its operational areas to determine if specific areas should not pursue certification?
 
-    How is the company planning to introduce "systems thinking" and standardize work processes across its operations?
+    10. How is the company planning to introduce "systems thinking" and standardize work processes across its operations?
 
-    What steps have been taken to ensure the board, management, and employees are all engaged and supportive of the ISO standards implementation?
+    11. What steps have been taken to ensure the board, management, and employees are all engaged and supportive of the ISO standards implementation?
 
-    For each identified area of activity within the company, what are the specific market requirements, legal obligations, and customer expectations that must be met?
+    12. For each identified area of activity within the company, what are the specific market requirements, legal obligations, and customer expectations that must be met?
 
-    What resources (both internal and external) are identified as necessary for meeting the requirements of each area of activity?
+    13. What resources (both internal and external) are identified as necessary for meeting the requirements of each area of activity?
 
-    Can you provide a detailed description of the processes in place for each area of activity, highlighting any sequential or parallel operations leading to delivery?
+    14. Can you provide a detailed description of the processes in place for each area of activity, highlighting any sequential or parallel operations leading to delivery?
 
-    What "soft resources" are prioritized for management to effectively implement and maintain ISO standards?
+    15. What "soft resources" are prioritized for management to effectively implement and maintain ISO standards?
 
-    How does the company plan to ensure the physical, social, and psychological environments are conducive to the operation of processes under ISO standards?
+    16. How does the company plan to ensure the physical, social, and psychological environments are conducive to the operation of processes under ISO standards?
 
-    What mechanisms are in place to ensure the monitoring and measurement resources are fit for purpose and capable of verifying product and service compliance?
+    17. What mechanisms are in place to ensure the monitoring and measurement resources are fit for purpose and capable of verifying product and service compliance?
 
-    How is the organization ensuring that essential knowledge is maintained, made available, and updated according to changing needs and trends?
+    18. How is the organization ensuring that essential knowledge is maintained, made available, and updated according to changing needs and trends?
 
-    What strategies are being employed to ascertain and enhance the competence of individuals performing work under the organization’s management?
+    19. What strategies are being employed to ascertain and enhance the competence of individuals performing work under the organization’s management?
 
-    How does the company plan to manage both internal and external communications relevant to the quality management system, and what documented information will be included?
+    20. How does the company plan to manage both internal and external communications relevant to the quality management system, and what documented information will be included?
     ###
     Chat History:{chat_history}
     User's lastest input: {user_input}
@@ -187,7 +188,8 @@ if "uploaded_files" not in st.session_state:
 
 if len(st.session_state.messages) == 0:
     st.session_state.messages.append({"role": "assistant", "content": "Hi, I am going to help you OnBoard ISOEnsure. What is the name of your organization? Can you provide the Organisation number and a point of contact?"})
-
+st.write("ISOGRAPH asks about 20 questions to gather preliminary data for ISOEnsure. The assistant may slightly modify its response based on your input. You can also upload a document to help answer the questions.")
+"Consider ansering all of them to efficiently onboard ISOEnsure."
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
