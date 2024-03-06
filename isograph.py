@@ -266,4 +266,49 @@ with st.sidebar:
         
         # Add the uploaded file to the session state list
         st.session_state.uploaded_files.append(uploaded_file)
+
+    questions = """
+    Preliminary Data Gathering:
+    1. What is the name of your organization? Can you provide the Organisation number and a point of contact?
+    2. What does your organization do? (Main products, services, or activities)
+    3. Who are your organization’s main customers?'
+    4. Verify that the point of contact shall be verifying the information provided, if the user is the person or someone else.
+    5  Can you briefly describe your organization’s history related to ISO 9001:2015 certification?
+    6. Who leads your organization, and what is their role? Give Top Management names and Point of contact
+    7. How many people work in organisation? Provide structure of responsibiliites or heirachy.
+    8. What locations or regions does your organization operate in?
     
+    Main Questions:
+
+    9. Has the company evaluated the relevance of ISO certification for all its operational areas to determine if specific areas should not pursue certification?
+
+    10. How is the company planning to introduce "systems thinking" and standardize work processes across its operations?
+
+    11. What steps have been taken to ensure the board, management, and employees are all engaged and supportive of the ISO standards implementation?
+
+    12. For each identified area of activity within the company, what are the specific market requirements, legal obligations, and customer expectations that must be met?
+
+    13. What resources (both internal and external) are identified as necessary for meeting the requirements of each area of activity?
+
+    14. Can you provide a detailed description of the processes in place for each area of activity, highlighting any sequential or parallel operations leading to delivery?
+
+    15. What "soft resources" are prioritized for management to effectively implement and maintain ISO standards?
+
+    16. How does the company plan to ensure the physical, social, and psychological environments are conducive to the operation of processes under ISO standards?
+
+    17. What mechanisms are in place to ensure the monitoring and measurement resources are fit for purpose and capable of verifying product and service compliance?
+
+    18. How is the organization ensuring that essential knowledge is maintained, made available, and updated according to changing needs and trends?
+
+    19. What strategies are being employed to ascertain and enhance the competence of individuals performing work under the organization’s management?
+
+    20. How does the company plan to manage both internal and external communications relevant to the quality management system, and what documented information will be included?
+
+
+"""
+    st.download_button(
+            label="Download Questions",
+            data=questions,
+            file_name="ISOENSURE_OnBoarding_Questions.txt",
+            mime="text/plain"
+        )
