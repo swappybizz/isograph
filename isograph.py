@@ -70,6 +70,7 @@ def get_chat_prompt(user_input:str, chat_history:str, doc_content:str):
         You have also been provided a document whose content you can use to answer the questions.
         You will find the answers to the questions in the document and return whats mention in the document regarding which question.
         If the content is not relevant mention that.
+        Finally add the question that takes forward the conversation.
         """
         doc_content = f"Document Content: {doc_content}"
     else:
