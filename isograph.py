@@ -234,8 +234,6 @@ with st.sidebar:
              Participate in the chat to gather information about the company.
              
              """)
-    # Chat History Management
-    "---"  
 
     if 'messages' in st.session_state:
         
@@ -249,7 +247,7 @@ with st.sidebar:
             file_name="chat_history.json",
             mime="application/json"
         )
-        "---"
+
 
     
 
