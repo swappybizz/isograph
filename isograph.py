@@ -236,7 +236,6 @@ with st.sidebar:
              """)
     # Chat History Management
     "---"  
-    st.write("Chat History Management")
 
     if 'messages' in st.session_state:
         
@@ -250,22 +249,15 @@ with st.sidebar:
             file_name="chat_history.json",
             mime="application/json"
         )
-
+        "---"
         if st.button("Clear Chat History"):
             st.session_state.messages = []
             st.experimental_rerun()
     
     # File upload and management
     "---"
-    st.write("Reference File")
-    uploaded_file = st.file_uploader("Choose a file", key="file_uploader")
-    if uploaded_file is not None:
-        # Initialize the list if it doesn't exist
-        if 'uploaded_files' not in st.session_state:
-            st.session_state.uploaded_files = []
-        
-        # Add the uploaded file to the session state list
-        st.session_state.uploaded_files.append(uploaded_file)
+
+
 
     questions = """
     Preliminary Data Gathering:
@@ -312,3 +304,12 @@ with st.sidebar:
             file_name="ISOENSURE_OnBoarding_Questions.txt",
             mime="text/plain"
         )
+    "---"
+    uploaded_file = st.file_uploader("Upload a Reference file:WORD, PDF, TXT supported ", key="file_uploader")
+    if uploaded_file is not None:
+        # Initialize the list if it doesn't exist
+        if 'uploaded_files' not in st.session_state:
+            st.session_state.uploaded_files = []
+        
+        # Add the uploaded file to the session state list
+        st.session_state.uploaded_files.append(uploaded_file)
