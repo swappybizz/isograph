@@ -68,7 +68,7 @@ def get_chat_prompt(user_input:str, chat_history:str, doc_content:str):
     if len(doc_content) > 5:
         doc_state = """
         You have also been provided a document whose content you can use to answer the questions.
-        You will find the answers to as many inteview questions in the document as possible and return whats mention in the document regarding which question.
+        You will find the answers to as many inteview questions in the document as possible and return whats mention in the document regarding each question.
         If the content is not relevant mention that.
         Finally add the question that takes forward the conversation.
         """
