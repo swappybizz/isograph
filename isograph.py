@@ -305,7 +305,7 @@ with st.sidebar:
             mime="text/plain"
         )
     "---"
-    uploaded_file = st.file_uploader("Upload a Reference file:WORD, PDF, TXT supported ", key="file_uploader")
+    uploaded_file = st.file_uploader("Upload a Reference file- WORD, PDF, TXT", key="file_uploader")
     if uploaded_file is not None:
         # Initialize the list if it doesn't exist
         if 'uploaded_files' not in st.session_state:
