@@ -155,7 +155,7 @@ def generate_text(prompt:str):
         messages=[
             {
                 "role": "system",  
-                "content": "You are a vigilant information gathering audit assistant"
+                "content": "Du er en årvåken assistent for informasjonssamling og revisjon.. Du forstår alle språk, men svarer kun på norsk."
             },
             {
                 "role": "user",
